@@ -1,0 +1,110 @@
+.modal .modal-inner {
+  max-width: 100vw;
+  min-height: 100vh;
+  max-height: 100vh;
+  @include flex-display();
+  @include flex-direction(column);
+  @include flex-align-items(center);
+  @include flex-justify-content(center);
+}
+
+.modal-dialog {
+  width: 95%;
+  @media (min-width: $screen-md-min) {
+    &.modal-400 {
+      max-width: 400px;
+      width: auto;
+    }
+    &.modal-450 {
+      max-width: 450px;
+      width: auto;
+    }
+    &.modal-500 {
+      max-width: 500px;
+      width: auto;
+    }
+    &.modal-600 {
+      width: 600px;
+      // width: auto;
+    }
+    &.modal-700 {
+      max-width: 700px;
+      width: auto;
+    }
+    &.modal-800 {
+      max-width: 800px;
+      width: auto;
+    }
+    &.modal-900 {
+      width: 900px;
+    }
+  }
+
+
+  .sub-title {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    margin: 0 0 10px 0;
+    text-shadow: 0 0 10px rgba(0,0,0,.4);
+  }
+}
+
+.modal-content {
+  overflow: hidden;
+  > .fa-remove {
+    @include transition(all 150ms ease-out);
+    &:hover {
+      color: #676B6E;
+    }
+  }
+  p {
+      a {
+      font-weight: bold;
+    }
+  }
+}
+
+.modal-content {
+  .modal-title {
+    font-size: 28px;
+    padding: 10px 50px;
+    font-weight: 300;
+    text-align: center !important;
+  }
+  .grey-content {
+    padding: 10px 30px;
+    .buttons {
+      margin: 20px 0 10px 0;
+    }
+    .btn {
+      padding-top: 10px;
+      padding-bottom: 6px;
+      margin: 0 5px;
+      text-transform: initial;
+    }
+  }
+  .bottom-content {
+    padding: 14px 50px;
+    box-shadow: inset 0 1px 0 0 $my-account-darker-gray;
+    background-color: #fff;
+    p {
+      font-size: 16px;
+      line-height: 24px;
+      margin: 0;
+      padding: 0;
+      b {
+      }
+    }
+  }
+}
+
+.modal-header {
+  &.bgcolor {
+  }
+  h3 {
+    text-align: center;
+    margin: 5px 0;
+  }
+}

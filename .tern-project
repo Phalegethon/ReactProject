@@ -1,0 +1,51 @@
+{
+  "libs": [
+    "browser",
+    "ecma6",
+    "ecma5",
+    "react"
+  ],
+  "plugins": {
+    "angular": {},
+    "bootstrap": {},
+    "commonjs": {},
+    "complete_strings": {},
+    "doc_comment": {},
+    "eslint": {},
+    "es_modules": {},
+    "grunt": {},
+    "guess-types": {},
+    "lodash": {},
+    "modules": {},
+    "node": {},
+    "node_resolve": {},
+    "react": {},
+    "webpack": {}
+  },
+    "libs": [
+    "browser",
+    "chai",
+    "ecma6",
+    "ecma5",
+    "react"
+  ],
+  "plugins": {
+    "complete_strings": {},
+    "doc_comment": {},
+    "es_modules": {},
+    "guess-types": {},
+    "lodash": {},
+    "modules": {},
+    "react": {},
+    "webpack": {}
+  },
+  "exclude": [
+    "node_modules/**",
+    "node/**",
+    "bower_components/**",
+    "bower/**"
+  ],
+  "include": [
+    "src/**/*.js"
+  ]
+}

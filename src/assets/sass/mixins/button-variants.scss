@@ -1,0 +1,103 @@
+/* .btn-xs {
+  @include border-radius(11px);
+  font-size: $font-size-xs !important;
+  font-family: $font-name-light;
+  line-height: normal !important;
+  padding: 3px 20px;
+}
+
+.btn-sm {
+  @include border-radius(20px);
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: $font-size-sm !important;
+  line-height: normal !important;
+  font-family: $font-name-light;
+}
+
+.btn-md {
+  @include border-radius(25px);
+  padding-left: 25px;
+  padding-right: 25px;
+  font-size: $font-size-md !important;
+  line-height: normal !important;
+  font-family: $font-name-bold;
+}
+
+.btn-lg {
+  @include border-radius(30px);
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: $font-size-lg !important;
+  line-height: normal !important;
+  font-family: $font-name-bold;
+}
+
+.btn-xl {
+  @include border-radius(40px);
+  padding: 10px 40px;
+  line-height: normal !important;
+  font-size: $font-size-xxxl !important;
+}
+
+@mixin button-template($color, $background, $border) {
+  background-color: $background;
+  color: $color;
+  border: 0;
+  &:disabled {
+    color: $color-gray;
+    background-color: darken($color-lightgray, 10%);
+    &:hover {
+      color: $color-gray;
+      background-color: darken($color-lightgray, 10%);
+    }
+  }
+  &:hover {
+    color: $color;
+    background-color: darken($background, 10%);
+  }
+  &.btn-border {
+    color: $background;
+    background-color: transparent;
+    border: $border solid $background;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+  &.btn-block {
+    display: block;
+  }
+}
+
+.btn-white {
+  @include button-template($color-gray, $color-white, 2px);
+}
+.btn-green {
+  @include button-template($color-white, $color-green, 2px);
+}
+
+.btn-gray {
+  @include button-template($color-white, $color-gray, 2px);
+}
+
+.btn-dark-blue {
+  @include button-template($color-white, #47525a, 2px);
+}
+
+
+.btn-light-gray{
+  @include button-template($color-white, #70848a, 2px);
+  color: #fff !important;
+  font-family: $font-name-light;
+  &.disabled{
+    background-color: #ced5d6;
+    &:hover{
+      background-color: #ced5d6;
+      color: #fff;
+    }
+  }
+  &:hover{
+    background-color: #5b6267;
+    color: #fff;
+  }
+} */

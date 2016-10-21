@@ -1,0 +1,14 @@
+#footer {
+  position: absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  background-color: $gray-darker;
+  padding: 10px 10px;
+  p {
+    text-align: center;
+    color: #CBCBCB;
+    margin: 0;
+    font-size: 12px;
+  }
+}

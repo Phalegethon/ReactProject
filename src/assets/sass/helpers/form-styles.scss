@@ -1,0 +1,226 @@
+.tooltip-inner {
+  padding: 8px 16px;
+  font-weight: 900;
+  font-size: 13px;
+  line-height: 1;
+  border-radius: 12px;
+  letter-spacing: 1px;
+}
+
+
+
+
+
+//=========================================
+//               form styles              =
+//=========================================
+.form-style {
+  // label
+  label {
+    font-weight: 300;
+    color: #303e48;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+
+  //  form control
+  .form-control {
+    font-size: 16px;
+    @include transition(all 150ms ease-out);
+    &.input-sm {
+      font-size: 14px;
+    }
+
+    &:focus {
+      outline: 0;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      // border-color: $base-purple;
+    }
+    &[type="number"] {
+      @include prefix(appearance, none);
+      -moz-appearance: textfield;
+    }
+
+  }
+
+
+
+
+
+  textarea {
+    padding: 20px;
+  }
+  select {
+    @include prefix(appearance, none);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 8px 10px;
+    background-position: right 12px center;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAKCAQAAAAjztcLAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAACOSURBVAjXY5zJwMAgzHD6LAODqfFbBgYGFgYGMYbL25YbMTBwb9P1esXAuIbj2v7FFqwMDAy/GWJPaDkyay1b4s78hecn26/fvy8oSagzxorvfSnN8I+BgYGJ4SmDszgTAxpgUp7M/f/zZ6ZPTJ8+f+b+rzwZw1Cmtz90LWO3f2H4whC7Xdfy7Q9GdIcBAN/bNXMRznBMAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE2LTAyLTIzVDExOjU2OjUyKzAwOjAwYmfcMAAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxNi0wMi0yM1QxMTo1Njo1MiswMDowMBM6ZIwAAAAASUVORK5CYII=);
+    padding-right: 34px;
+    padding-left: 10px;
+    option {
+      padding: 3px 10px;
+    }
+    &[multiple] {
+      background-image: none;
+      min-height: 150px;
+      height: auto;
+    }
+    &:not([multiple]) {
+      cursor: pointer;
+    }
+    &[disabled] {
+      cursor: not-allowed;
+    }
+  }
+
+
+
+
+
+
+
+
+
+  //================================================
+  //              ERROR SUCCESS STYLES             =
+  //================================================
+  &.ng-submitted {
+    .form-control {
+
+
+
+      &.ng-invalid {
+        border-color: #f2632b;
+        background-color: #ffeeef;
+        &:focus {
+          background-color: #fff;
+        }
+        &.ng-invalid ~ .form-messages {
+          display: block;
+        }
+
+
+
+
+        &.ng-invalid-required ~ .form-messages .error-required {
+          display: block;
+        }
+        &.ng-invalid-url ~ .form-messages .error-url {
+          display: block;
+        }
+        &.ng-invalid-pattern ~ .form-messages .error-pattern {
+          display: block;
+        }
+        &.ng-invalid-minlength ~ .form-messages .error-minlength {
+          display: block;
+        }
+        &.ng-invalid-maxlength ~ .form-messages .error-maxlength {
+          display: block;
+        }
+        &.ng-invalid-min ~ .form-messages .error-min {
+          display: block;
+        }
+        &.ng-invalid-max ~ .form-messages .error-max {
+          display: block;
+        }
+        &.ng-invalid-json ~ .form-messages .error-json {
+          display: block;
+        }
+
+
+
+
+      }
+
+
+
+      &.ng-valid {
+        border-color: #c2dc97;
+        background-color: #edf6db;
+        &:focus {
+          background-color: #fff;
+        }
+        &.ng-untouched {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+//=========================================
+//              FORM MESSAGES             =
+//=========================================
+.form-messages {
+  width: 100%;
+  display: none;
+  border-radius: 3px;
+  position: relative;
+  margin-top: 5px;
+  padding: 4px 20px;
+  z-index: 1;
+  background-color: $base-dark-orange;
+  &::after {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 16px;
+    z-index: -1;
+    @include triangle($direction: up,
+      $size: (26px, 16px),
+      $color: $base-dark-orange);
+  }
+  p {
+    display: none;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 22px;
+    font-style: normal;
+    color: #fff !important;
+  }
+  &.no-arrow {
+    &::after {
+      display: none;
+    }
+  }
+  // .ng-submitted & {
+  //   display: block;
+  // }
+  .form-control.ng-valid ~ & {
+    display: none !important;
+  }
+  .form-group.form-control.ng-invalid ~ & {
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+
+}
+
+
+
+label + .form-messages {
+  margin-top: -10px;
+}
+//--------  End of form messages  ---------//

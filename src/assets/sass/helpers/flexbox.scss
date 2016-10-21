@@ -1,0 +1,174 @@
+@mixin flex-styles($prefix) {
+  // flex
+  .#{$prefix}-d-b {
+    display: block;
+  }
+  .#{$prefix}-d-ib {
+    display: inline-block;
+  }
+  .#{$prefix}-d-i {
+    display: inline;
+  }
+
+
+  .#{$prefix}-fl-d {
+    @include flex-display();
+  }
+  .#{$prefix}-fl-i {
+    @include flex-inline();
+  }
+
+  // direction
+  .#{$prefix}-fl-r {
+    @include flex-direction(row);
+  }
+  .#{$prefix}-fl-c {
+    @include flex-direction(column);
+  }
+  .#{$prefix}-fl-rr {
+    @include flex-direction(row-reverse);
+  }
+  .#{$prefix}-fl-cr {
+    @include flex-direction(column-reverse);
+  }
+
+  //========================================
+  //               RESPONSIVE              =
+  //========================================
+
+  // wrap
+  .#{$prefix}-fl-w {
+    @include flex-wrap(wrap);
+  }
+  .#{$prefix}-fl-nw {
+    @include flex-wrap(nowrap);
+  }
+  .#{$prefix}-fl-wr {
+    @include flex-wrap(wrap-reverse);
+  }
+
+
+  // justify-content
+  .#{$prefix}-fl-jc-fs {
+    @include flex-justify-content(flex-start);
+  }
+  .#{$prefix}-fl-jc-fe {
+    @include flex-justify-content(flex-end);
+  }
+  .#{$prefix}-fl-jc-c {
+    @include flex-justify-content(center);
+  }
+  .#{$prefix}-fl-jc-sb {
+    @include flex-justify-content(space-between);
+  }
+  .#{$prefix}-fl-jc-sa {
+    @include flex-justify-content(space-around);
+  }
+
+
+  // align-items
+  .#{$prefix}-fl-ai-fs {
+    @include flex-align-items(flex-start);
+  }
+  .#{$prefix}-fl-ai-fe {
+    @include flex-align-items(flex-end);
+  }
+  .#{$prefix}-fl-ai-c {
+    @include flex-align-items(center);
+  }
+  .#{$prefix}-fl-ai-b {
+    @include flex-align-items(baseline);
+  }
+  .#{$prefix}-fl-ai-s {
+    @include flex-align-items(stretch);
+  }
+
+
+  // align content
+  .#{$prefix}-fl-ai-fs {
+    @include flex-align-content(flex-start);
+  }
+  .#{$prefix}-fl-ai-fe {
+    @include flex-align-content(flex-end);
+  }
+  .#{$prefix}-fl-ai-c {
+    @include flex-align-content(center);
+  }
+  .#{$prefix}-fl-ai-sb {
+    @include flex-align-content(space-between);
+  }
+  .#{$prefix}-fl-ai-sa {
+    @include flex-align-content(space-around);
+  }
+  .#{$prefix}-fl-ai-s {
+    @include flex-align-content(stretch);
+  }
+
+
+  // align-self
+  .#{$prefix}-fl-as-a {
+    @include flex-align-self(auto);
+  }
+  .#{$prefix}-fl-as-fs {
+    @include flex-align-self(flex-start);
+  }
+  .#{$prefix}-fl-as-fe {
+    @include flex-align-self(flex-end);
+  }
+  .#{$prefix}-fl-as-c {
+    @include flex-align-self(center);
+  }
+  .#{$prefix}-fl-as-b {
+    @include flex-align-self(baseline);
+  }
+  .#{$prefix}-fl-as-s {
+    @include flex-align-self(stretch);
+  }
+
+
+  // order
+  .#{$prefix}-fl-o-1 {
+    @include flex-order(1);
+  }
+  .#{$prefix}-fl-o-2 {
+    @include flex-order(2);
+  }
+  .#{$prefix}-fl-o-3 {
+    @include flex-order(3);
+  }
+  .#{$prefix}-fl-o-4 {
+    @include flex-order(4);
+  }
+  .#{$prefix}-fl-o-5 {
+    @include flex-order(5);
+  }
+
+
+  .#{$prefix}-fl-g {
+    @include flex(1 1 auto);
+  }
+}
+//--------  End of helper classes  ---------//
+
+
+
+
+
+// main function definition
+@mixin add-flexbox-styles($breakpoints: $grid-breakpoints) {
+  @each $breakpoint-name, $breakpoint-value in $breakpoints {
+    // if xs value = 0, set it global without media queries
+    @if($breakpoint-value == $screen-xs) {
+      @include flex-styles($breakpoint-name);
+    }
+    // breakpoint values that not equal to 0
+    @else {
+      @media screen and (min-width: $breakpoint-value) {
+        @include flex-styles($breakpoint-name);
+      }
+    }
+  }
+}
+
+
+@include add-flexbox-styles;

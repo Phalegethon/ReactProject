@@ -1,0 +1,466 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+
+#app,
+#main {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  @include flex-display();
+  @include flex-direction(column);
+}
+.page {
+  width: 100%;
+  @include flex(1 1 auto);
+}
+#wrapper {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  @include flex-display();
+  @include flex-direction(column);
+}
+
+#main {
+  width: 100%;
+  @include flex(1 1 auto);
+}
+
+
+.text-blue {
+  color: #35b5df;
+}
+.text-green {
+  color: #87bd2a;
+}
+.text-orange {
+  color: #87bd2a;
+}
+.text-white {
+  color: #fff;
+}
+
+
+
+
+
+.thin {
+  font-weight: 100;
+}
+.light {
+  font-weight: 300;
+}
+.bold {
+  font-weight: 700;
+}
+.extra-bold {
+  font-weight: 900;
+}
+
+
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+
+
+
+
+// Custom Resets
+.float-none {
+  float: none;
+}
+
+.block {
+  width: 100%;
+  display: block;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+
+.center-vertical {
+  @include flex-display();
+  @include flex-align-items(center);
+  > *:only-child {
+    @include flex(1 1 auto);
+  }
+}
+.center-horizontal {
+  @include flex-display();
+  @include flex-direction(row);
+  @include flex-justify-content(center);
+}
+.center {
+  @include flex-display();
+  @include flex-direction(col);
+  @include flex-justify-content(center);
+  @include flex-align-items(center);
+}
+
+.blur-out {
+  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -o-filter: blur(1px);
+  -ms-filter: blur(1px);
+  filter: blur(1px);
+}
+
+
+
+
+@include placeholder($base-lighter-navy);
+@include selection($base-white, $base-purple);
+
+
+
+
+
+
+
+.btn-spinner {
+  position: relative;
+
+  .fa-cog {
+    position: absolute;
+    left: 15px;
+    top: 14px;
+    top: calc(50% - .5em);
+  }
+}
+
+
+
+
+
+@mixin fa() {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+
+//////////////
+// position //
+//////////////
+.static {
+  position: relative;
+}
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+/////////////
+// display //
+/////////////
+.show {
+  display: block;
+}
+.hidden {
+  display: none;
+  &.visible {
+    display: block !important;
+  }
+  &.inline-visible {
+    display: inline-block !important;
+  }
+}
+////////////////
+// visibility //
+////////////////
+.visible-on {
+  visibility: visible;
+}
+.visible-off {
+  visibility: hidden;
+}
+/////////////
+// opacity //
+/////////////
+.opacity-0 {
+  opacity: 0;
+}
+.opacity-1 {
+  opacity: 1;
+}
+
+
+
+
+
+.cursor-pointer {
+  cursor: pointer;
+}
+.cursor-help {
+  cursor: help;
+}
+.cursor-default {
+  cursor: default;
+}
+
+
+
+
+.non-select {
+  @include prefix(user-select, none);
+}
+
+
+
+
+///////////////////
+// full with img //
+///////////////////
+.img-scale {
+  width: 100%;
+  height: auto;
+}
+
+
+
+
+
+/////////////////////
+// textarea resize //
+/////////////////////
+.resize-vertical {
+  resize: vertical;
+}
+.resize-horizontal {
+  resize: horizontal;
+}
+.resize-none {
+  resize: none;
+}
+
+
+
+
+
+/////////////////
+//hidden visually //
+/////////////////
+.hidden-visually,
+.hidden-input {
+  @include hidden-visually();
+}
+
+
+
+
+
+//=================================================
+//              ICON CLASS ANIMATION              =
+//=================================================
+// i.icon-2x { font-size: 110%; }
+// i.icon-3x { font-size: 130%; }
+// i.icon-4x { font-size: 160%; }
+// i.icon-5x { font-size: 200%; }
+// i.icon-6x { font-size: 260%; }
+// i.icon-7x { font-size: 320%; }
+// i.icon-8x { font-size: 400%; }
+// i.icon-9x { font-size: 500%; }
+// i.icon-10x{ font-size: 700%; }
+//-----  End of ICON CLASS ANIMATION  ------//
+
+
+
+
+// .trans100 {
+//   @include transition(100ms);
+// }
+// .trans150 {
+//   @include transition(150ms);
+// }
+// .trans200 {
+//   @include transition(200ms);
+// }
+// .trans250 {
+//   @include transition(250ms);
+// }
+// .trans300 {
+//   @include transition(300ms);
+// }
+// .trans350 {
+//   @include transition(350ms);
+// }
+// .trans400 {
+//   @include transition(400ms);
+// }
+// .trans450 {
+//   @include transition(450ms);
+// }
+// .trans500 {
+//   @include transition(500ms);
+// }
+// .trans1000 {
+//   @include transition(1000ms);
+// }
+
+
+
+
+//========================================
+//              INPUT STYLES             =
+//========================================
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+input {
+  &:invalid {
+    box-shadow: none;
+  }
+  &:-moz-submit-invalid {
+    box-shadow: none;
+  }
+  &:-moz-ui-invalid {
+    box-shadow: none;
+  }
+}
+//--------  End of input styles  ---------//
+
+
+
+
+
+.fz12 {
+  font-size: 12px;
+}
+.fz13 {
+  font-size: 13px;
+}
+.fz14 {
+  font-size: 14px;
+}
+.fz15 {
+  font-size: 15px;
+}
+.fz16 {
+  font-size: 16px;
+}
+.fz17 {
+  font-size: 17px;
+}
+.fz18 {
+  font-size: 18px;
+}
+.fz19 {
+  font-size: 19px;
+}
+.fz20 {
+  font-size: 20px;
+}
+
+
+
+
+//===========================================
+//              UI VIEW CONTENT             =
+//===========================================
+#main-content {
+  @include transition(all 400ms ease-out);
+
+
+  &.ng-enter {
+    opacity: 0;
+    &.ng-enter-active {
+      opacity: 1;
+      display: block;
+    }
+  }
+
+
+  &.ng-leave {
+    opacity: 1;
+    &.ng-leave-active {
+      opacity: 0;
+      display: none;
+    }
+  }
+}
+//--------  End of ui view content  ---------//
+
+
+
+
+
+
+
+
+
+
+
+@include screen-max($screen-sm) {
+  .container {
+    max-width: 600px;
+  }
+}
+
+
+
+
+.dim {
+  @include dim();
+  &.loaded {
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+}
+.loading {
+  @include loading();
+  &.loaded {
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+}
+
+
+
+
+.bg-white {
+  background-color: $color-white
+}
+.bg-orange {
+  background-color: $color-orange
+}
+.bg-purple {
+  background-color: $color-purple
+}
+.bg-green {
+  background-color: $color-green
+}
+.bg-gray {
+  background-color: $color-gray
+}
+.bg-lightgray {
+  background-color: $color-lightgray
+}

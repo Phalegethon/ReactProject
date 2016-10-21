@@ -1,0 +1,91 @@
+// change to false if its not imported into bootstrap
+$use-bootstrap: true;
+
+// margin and padding values array
+$space-values : (
+  0,
+  5,
+  10,
+  15,
+  20,
+  30,
+  40,
+  50
+) !default;
+
+// margin and padding shorthands
+$space-prefixes : (
+  p  : (padding),
+  pt : (padding-top),
+  pr : (padding-right),
+  pb : (padding-bottom),
+  pl : (padding-left),
+  pv  : (padding-top, padding-bottom),
+  ph  : (padding-left, padding-right),
+  m  : (margin),
+  mt : (margin-top),
+  mr : (margin-right),
+  mb : (margin-bottom),
+  ml : (margin-left),
+  mv  : (margin-top, margin-bottom),
+  mh  : (margin-left, margin-right),
+) !default;
+
+// change these values if its not imported into bootstrap
+$grid-breakpoints-custom: (
+  // Extra small screen / phone
+  xs: $screen-xs,
+  // Small screen / phone
+  sm: $screen-sm,
+  // Medium screen / tablet
+  md: $screen-md,
+  // Large screen / desktop
+  lg: $screen-lg
+) !default;
+
+$breakpoints : $grid-breakpoints-custom;
+@if $use-bootstrap {
+  $breakpoints : $grid-breakpoints;
+}
+
+
+
+
+// main function definition
+@mixin make-space($values, $prefixes, $breakpoints) {
+  @each $breakpoint-name, $breakpoint-value in $breakpoints {
+    // if xs value = 0, set it global without media queries
+    @if($breakpoint-value == $screen-xs) {
+      @each $attr-short, $attr-long in $prefixes {
+        @each $value in $values {
+          .#{$breakpoint-name}-#{$attr-short}-#{$value} {
+            @each $prop in $attr-long {
+              #{$prop}: #{$value}#{'px'} !important;
+            }
+          }
+        }
+      }
+    }
+    // breakpoint values that not equal to 0
+    @else {
+      @media screen and (min-width: $breakpoint-value) {
+        @each $attr-short, $attr-long in $prefixes {
+          @each $value in $values {
+            .#{$breakpoint-name}-#{$attr-short}-#{$value} {
+              @each $prop in $attr-long {
+                #{$prop}: #{$value}#{'px'} !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include make-space($space-values, $space-prefixes, $breakpoints);
+
+
+
+
+

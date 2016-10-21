@@ -1,0 +1,29 @@
+// #main-content {
+//   &.ng-enter,
+//   &.ng-hide-remove {
+//     @include transition(all 3000ms ease-out);
+//     opacity: 0;
+//   }
+
+
+//   &.ng-enter-active,
+//   &.ng-hide-remove-active {
+//     @include transition(all 3000ms ease-out);
+//     opacity: 1;
+//   }
+
+
+//   &.ng-leave,
+//   &.ng-hide-add {
+//     @include transition(all 3000ms ease-out);
+//     opacity: 1;
+//   }
+
+
+//   &.ng-leave-active,
+//   &.ng-hide-add-active {
+//     @include transition(all 3000ms ease-out);
+//     opacity: 0;
+//   }
+// }
+//

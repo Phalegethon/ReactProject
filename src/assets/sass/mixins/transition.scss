@@ -1,0 +1,18 @@
+@mixin trans($duration: 300ms) {
+  @include prefix(transition, all $duration ease-out);
+}
+
+@mixin transition($value) {
+  @include prefix(transition, $value);
+  @include browser(Mobile) {
+    @include prefix(transition, none);
+  };
+}
+
+@mixin transition-delay($delay: 100ms) {
+  @include prefix(transition-delay, $delay);
+}
+
+@mixin transition-timing($type: ease-out) {
+  @include prefix(transition-timing-function, $type);
+}
